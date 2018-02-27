@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Promise Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Class/Promise" class="dashAnchor"></a>
+
+    <a title="Promise Class Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          DeLorean Docs
+        </a>
+         (100% documented)
+      </p>
+    
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/therapychat/DeLorean">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="dash-feed://https%3A%2F%2Ftherapychat%2Egithub%2Eio%2FDeLorean%2FDeLorean%2Exml">
+            <img class="header-icon" src="../img/dash.png"/>
+            Install in Dash
+          </a>
+        </p>
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">DeLorean Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      Promise Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Promise.html">Promise</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Queue.html">Queue</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/Future.html">Future</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/DispatchQueue.html">DispatchQueue</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/Executer.html">Executer</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>Promise</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                </div>
+              </div>
+            <h2 id='overview' class='heading'>Overview</h2>
+
+<p>DeLorean is a lightweight framework which allows you to write better async code in Swift. We designed DeLorean to be simple to use and also very flexible. It&rsquo;s partially based on <a href="https://promisesaplus.com">JavaScript A+</a> specs. We have added some useful features like <code>progressable</code> and <code>cancellable</code> promises. This promises layer queues all async task on background to avoid block the main thread.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseCACyxGycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseCACyxGycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates an instant pending Promise</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseCACyxGx5value_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseCACyxGx5value_tcfc">init(value:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates an instant fulfilled Promise</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseCACyxGs5Error_p5error_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(error:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseCACyxGs5Error_p5error_tcfc">init(error:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates an instant rejected Promise</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseCACyxGAA8Executer_p7context_yyxc_yxcys5Error_pcyyctKc9resolverstcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(context:resolvers:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseCACyxGAA8Executer_p7context_yyxc_yxcys5Error_pcyyctKc9resolverstcfc">init(context:resolvers:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a Promise with block-based api</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Executer.html">Executer</a></span> <span class="o">=</span> <span class="kt">DispatchQueue</span><span class="o">.</span><span class="nf">global</span><span class="p">(</span><span class="nv">qos</span><span class="p">:</span> <span class="o">.</span><span class="n">userInitiated</span><span class="p">),</span>
+            <span class="nv">resolvers</span><span class="p">:</span> <span class="kd">@escaping</span>
+    <span class="p">(</span>
+    <span class="n">_</span> <span class="nv">progress</span><span class="p">:</span> <span class="kd">@escaping(T)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
+    <span class="n">_</span> <span class="nv">fulfill</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
+    <span class="n">_</span> <span class="nv">reject</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
+    <span class="n">_</span> <span class="nv">cancelled</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>resolvers</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Multiples blocks to handle the future state of promise</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The new <code>Promise</code> instance.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseCACyxGAA8Executer_p7context_yyAA6FutureOyxGcKc6futuretcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(context:future:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseCACyxGAA8Executer_p7context_yyAA6FutureOyxGcKc6futuretcfc">init(context:future:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a Promise with enum-based DSL</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Executer.html">Executer</a></span> <span class="o">=</span> <span class="kt">DispatchQueue</span><span class="o">.</span><span class="nf">global</span><span class="p">(</span><span class="nv">qos</span><span class="p">:</span> <span class="o">.</span><span class="n">userInitiated</span><span class="p">),</span>
+            <span class="nv">future</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Enums/Future.html">Future</a></span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>future</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Future value-type to handle the future state of promise</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The new <code>Promise</code> instance.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC8progressACyxGAA8Executer_p2on_yxctF"></a>
+                    <a name="//apple_ref/swift/Method/progress(on:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC8progressACyxGAA8Executer_p2on_yxctF">progress(on:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <h3 id='progress' class='heading'>Progress</h3>
+
+<p>If there is an asynchronous action that can <q>succeed</q> more than once, or delivers a series of values over time instead of just one, but you don&rsquo;t want to finish the promise you can use this function.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">foobar</span> <span class="o">=</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span> <span class="p">{</span> <span class="n">future</span> <span class="k">in</span>
+    <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="nf">progress</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+    <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="nf">progress</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+    <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="nf">progress</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+    <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="nf">fulfill</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+    <span class="p">}</span><span class="o">.</span><span class="nf">progress</span><span class="p">({</span> <span class="n">value</span> <span class="k">in</span>
+        <span class="c1">// This block is called multiple times</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="p">})</span><span class="o">.</span><span class="nf">then</span><span class="p">({</span> <span class="n">value</span> <span class="k">in</span>
+        <span class="c1">// This block is called once</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="p">})</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">progress</span><span class="p">(</span><span class="n">on</span> <span class="nv">context</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Executer.html">Executer</a></span> <span class="o">=</span> <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="p">,</span>
+                     <span class="n">_</span> <span class="nv">progressed</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC4thenACyqd__GAA8Executer_p2on_AExKctlF"></a>
+                    <a name="//apple_ref/swift/Method/then(on:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC4thenACyqd__GAA8Executer_p2on_AExKctlF">then(on:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Map for chaineable promises</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">then</span><span class="o">&lt;</span><span class="kt">U</span><span class="o">&gt;</span><span class="p">(</span><span class="n">on</span> <span class="nv">context</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Executer.html">Executer</a></span> <span class="o">=</span> <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="p">,</span>
+                    <span class="n">_</span> <span class="nv">transform</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">T</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">U</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">U</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC4thenACyqd__GAA8Executer_p2on_qd__xKctlF"></a>
+                    <a name="//apple_ref/swift/Method/then(on:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC4thenACyqd__GAA8Executer_p2on_qd__xKctlF">then(on:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>FlatMap for chaineable promises</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">then</span><span class="o">&lt;</span><span class="kt">U</span><span class="o">&gt;</span><span class="p">(</span><span class="n">on</span> <span class="nv">context</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Executer.html">Executer</a></span> <span class="o">=</span> <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="p">,</span>
+                    <span class="n">_</span> <span class="nv">transform</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">T</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">U</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">U</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC4thenACyxGAA8Executer_p2on_yxcys5Error_pcyxcyyctF"></a>
+                    <a name="//apple_ref/swift/Method/then(on:_:_:_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC4thenACyxGAA8Executer_p2on_yxcys5Error_pcyxcyyctF">then(on:_:_:_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <h3 id='then' class='heading'>Then</h3>
+
+<p>You can simple chaining multiple asynchronous tasks.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">foobar</span> <span class="o">=</span> <span class="kt">Promise</span> <span class="p">{</span> <span class="n">future</span> <span class="k">in</span>
+    <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="nf">fulfill</span><span class="p">(</span><span class="s">"foobar"</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="n">promise</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span> <span class="n">value</span> <span class="k">in</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">then</span><span class="p">(</span><span class="n">on</span> <span class="nv">context</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Executer.html">Executer</a></span> <span class="o">=</span> <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="p">,</span>
+                 <span class="n">_</span> <span class="nv">fulfilled</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">,</span>
+                 <span class="n">_</span> <span class="nv">rejected</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="o">=</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span> <span class="p">},</span>
+                 <span class="n">_</span> <span class="nv">progressed</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="o">=</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span> <span class="p">},</span>
+                 <span class="n">_</span> <span class="nv">cancelled</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="o">=</span> <span class="p">{</span> <span class="p">})</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC6cancelACyxGAA8Executer_p2on_yyctF"></a>
+                    <a name="//apple_ref/swift/Method/cancel(on:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC6cancelACyxGAA8Executer_p2on_yyctF">cancel(on:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <h3 id='cancel' class='heading'>Cancel</h3>
+
+<p>This function will trigger a callback that the promise can use to cancel its work. Naturally, requesting cancellation of a promise that has already been resolved does nothing, even if the callbacks have not yet been invoked.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">foobar</span> <span class="o">=</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span> <span class="p">{</span> <span class="n">future</span> <span class="k">in</span>
+    <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="nf">progress</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+    <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="n">cancel</span><span class="p">)</span>
+    <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="nf">fulfill</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+    <span class="p">}</span><span class="o">.</span><span class="n">progress</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span>
+    <span class="p">}</span><span class="o">.</span><span class="n">cancel</span> <span class="p">{</span>
+        <span class="c1">// Handle cancellable work</span>
+    <span class="p">}</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span> <span class="n">value</span> <span class="k">in</span>
+        <span class="c1">// This block is never called</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">cancel</span><span class="p">(</span><span class="n">on</span> <span class="nv">context</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Executer.html">Executer</a></span> <span class="o">=</span> <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="p">,</span>
+                   <span class="n">_</span> <span class="nv">cancelled</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC9isPendingSbv"></a>
+                    <a name="//apple_ref/swift/Property/isPending" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC9isPendingSbv">isPending</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns if promise state is pending</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isPending</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC11isFulfilledSbv"></a>
+                    <a name="//apple_ref/swift/Property/isFulfilled" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC11isFulfilledSbv">isFulfilled</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns if promise state is fulfilled</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isFulfilled</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC10isRejectedSbv"></a>
+                    <a name="//apple_ref/swift/Property/isRejected" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC10isRejectedSbv">isRejected</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns if promise state is rejected</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isRejected</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC11isCancelledSbv"></a>
+                    <a name="//apple_ref/swift/Property/isCancelled" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC11isCancelledSbv">isCancelled</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns if promise state is cancelled</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isCancelled</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC5valuexSgv"></a>
+                    <a name="//apple_ref/swift/Property/value" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC5valuexSgv">value</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns current value of promise</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">T</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC5errors5Error_pSgv"></a>
+                    <a name="//apple_ref/swift/Property/error" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC5errors5Error_pSgv">error</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns current error of promise</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC8progressyxF"></a>
+                    <a name="//apple_ref/swift/Method/progress(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC8progressyxF">progress(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Update promise state synchronous to progressed</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">progress</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC7fulfillyxF"></a>
+                    <a name="//apple_ref/swift/Method/fulfill(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC7fulfillyxF">fulfill(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Update promise state synchronous to fulfilled</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fulfill</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC6rejectys5Error_pF"></a>
+                    <a name="//apple_ref/swift/Method/reject(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC6rejectys5Error_pF">reject(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Update promise state synchronous to rejected</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">reject</span><span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC6cancelyyF"></a>
+                    <a name="//apple_ref/swift/Method/cancel()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC6cancelyyF">cancel()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Update promise state synchronous to cancelled</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">cancel</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC7recoverACyxGAEs5Error_pKcF"></a>
+                    <a name="//apple_ref/swift/Method/recover(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC7recoverACyxGAEs5Error_pKcF">recover(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <h3 id='recover' class='heading'>Recover</h3>
+
+<p>This function lets us catch an error and easily recover from it without breaking the rest of the promise chain.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">foobar</span> <span class="o">=</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span>
+   <span class="k">throw</span> <span class="kt">SimpleError</span><span class="p">()</span>
+<span class="p">}</span><span class="o">.</span><span class="n">recover</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
+   <span class="k">return</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">}</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span>
+   <span class="nf">print</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span>
+<span class="p">}</span><span class="o">.</span><span class="k">catch</span> <span class="p">{</span>
+   <span class="c1">// Handle error</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">recover</span><span class="p">(</span><span class="n">_</span> <span class="nv">recovery</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Error</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC3zipACyqd___qd_0_tGACyqd__G_ACyqd_0_Gtr0_lFZ"></a>
+                    <a name="//apple_ref/swift/Method/zip(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC3zipACyqd___qd_0_tGACyqd__G_ACyqd_0_Gtr0_lFZ">zip(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <h3 id='zip' class='heading'>Zip</h3>
+
+<p>This function allows you to join different promises 2 and return a tuple with the result of them. Promises are resolved in parallel.</p>
+<pre class="highlight swift"><code> <span class="k">let</span> <span class="nv">promise1</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+ <span class="k">let</span> <span class="nv">promise2</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="s">"foobar"</span><span class="p">)</span>
+ <span class="k">let</span> <span class="nv">zipped</span> <span class="o">=</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;.</span><span class="nf">zip</span><span class="p">(</span><span class="n">promise1</span><span class="p">,</span> <span class="n">promise2</span><span class="p">)</span>
+     <span class="o">.</span><span class="n">then</span> <span class="p">{</span> <span class="n">value1</span><span class="p">,</span> <span class="n">value2</span> <span class="k">in</span>
+         <span class="nf">print</span><span class="p">(</span><span class="n">value1</span><span class="p">)</span> <span class="c1">// This function prints `0`</span>
+         <span class="nf">print</span><span class="p">(</span><span class="n">value2</span><span class="p">)</span> <span class="c1">// This function prints `"foobar"`</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">zip</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">,</span> <span class="kt">U</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">first</span><span class="p">:</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span>
+                             <span class="n">_</span> <span class="nv">second</span><span class="p">:</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">U</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="p">(</span><span class="kt">T</span><span class="p">,</span> <span class="kt">U</span><span class="p">)</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC3zipACyqd___qd_0_qd_1_tGACyqd__G_ACyqd_0_GACyqd_1_Gtr1_lFZ"></a>
+                    <a name="//apple_ref/swift/Method/zip(_:_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC3zipACyqd___qd_0_qd_1_tGACyqd__G_ACyqd_0_GACyqd_1_Gtr1_lFZ">zip(_:_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <h3 id='zip' class='heading'>Zip</h3>
+
+<p>This function allows you to join different promises 3 and return a tuple with the result of them. Promises are resolved in parallel.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">promise1</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">promise2</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="s">"foo"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">promise3</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="s">"bar"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">zipped</span> <span class="o">=</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;.</span><span class="nf">zip</span><span class="p">(</span><span class="n">promise1</span><span class="p">,</span> <span class="n">promise2</span><span class="p">,</span> <span class="n">promise3</span><span class="p">)</span>
+   <span class="o">.</span><span class="n">then</span> <span class="p">{</span> <span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">,</span> <span class="n">value3</span> <span class="k">in</span>
+       <span class="nf">print</span><span class="p">(</span><span class="n">value1</span><span class="p">)</span> <span class="c1">// This function prints `0`</span>
+       <span class="nf">print</span><span class="p">(</span><span class="n">value2</span><span class="p">)</span> <span class="c1">// This function prints `"foo"`</span>
+       <span class="nf">print</span><span class="p">(</span><span class="n">value3</span><span class="p">)</span> <span class="c1">// This function prints `"bar"`</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">zip</span><span class="o">&lt;</span><span class="kt">T1</span><span class="p">,</span> <span class="kt">T2</span><span class="p">,</span> <span class="kt">T3</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">first</span><span class="p">:</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T1</span><span class="o">&gt;</span><span class="p">,</span>
+                                   <span class="n">_</span> <span class="nv">second</span><span class="p">:</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T2</span><span class="o">&gt;</span><span class="p">,</span>
+                                   <span class="n">_</span> <span class="nv">last</span><span class="p">:</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T3</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="p">(</span><span class="kt">T1</span><span class="p">,</span> <span class="kt">T2</span><span class="p">,</span> <span class="kt">T3</span><span class="p">)</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC3zipACyqd___qd_0_qd_1_qd_2_tGACyqd__G_ACyqd_0_GACyqd_1_GACyqd_2_Gtr2_lFZ"></a>
+                    <a name="//apple_ref/swift/Method/zip(_:_:_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC3zipACyqd___qd_0_qd_1_qd_2_tGACyqd__G_ACyqd_0_GACyqd_1_GACyqd_2_Gtr2_lFZ">zip(_:_:_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <h3 id='zip' class='heading'>Zip</h3>
+
+<p>This function allows you to join different promises 4 and return a tuple with the result of them. Promises are resolved in parallel.</p>
+<pre class="highlight swift"><code> <span class="k">let</span> <span class="nv">promise1</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+ <span class="k">let</span> <span class="nv">promise2</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="s">"foo"</span><span class="p">)</span>
+ <span class="k">let</span> <span class="nv">promise3</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="s">"bar"</span><span class="p">)</span>
+ <span class="k">let</span> <span class="nv">promise4</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+ <span class="k">let</span> <span class="nv">zipped</span> <span class="o">=</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;.</span><span class="nf">zip</span><span class="p">(</span><span class="n">promise1</span><span class="p">,</span> <span class="n">promise2</span><span class="p">,</span> <span class="n">promise3</span><span class="p">,</span> <span class="n">promise4</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">then</span> <span class="p">{</span> <span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">,</span> <span class="n">value3</span> <span class="k">in</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">value1</span><span class="p">)</span> <span class="c1">// This function prints `0`</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">value2</span><span class="p">)</span> <span class="c1">// This function prints `"foo"`</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">value3</span><span class="p">)</span> <span class="c1">// This function prints `"bar"`</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">value4</span><span class="p">)</span> <span class="c1">// This function prints `true`</span>
+ <span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">zip</span><span class="o">&lt;</span><span class="kt">T1</span><span class="p">,</span> <span class="kt">T2</span><span class="p">,</span> <span class="kt">T3</span><span class="p">,</span> <span class="kt">T4</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">first</span><span class="p">:</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T1</span><span class="o">&gt;</span><span class="p">,</span>
+                                       <span class="n">_</span> <span class="nv">second</span><span class="p">:</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T2</span><span class="o">&gt;</span><span class="p">,</span>
+                                       <span class="n">_</span> <span class="nv">third</span><span class="p">:</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T3</span><span class="o">&gt;</span><span class="p">,</span>
+                                       <span class="n">_</span> <span class="nv">last</span><span class="p">:</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T4</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="p">(</span><span class="kt">T1</span><span class="p">,</span> <span class="kt">T2</span><span class="p">,</span> <span class="kt">T3</span><span class="p">,</span> <span class="kt">T4</span><span class="p">)</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC7timeoutACyxGSdF"></a>
+                    <a name="//apple_ref/swift/Method/timeout(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC7timeoutACyxGSdF">timeout(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <h3 id='timeout' class='heading'>Timeout</h3>
+
+<p>Timeout allows us to wait for a promise for a time interval or reject it, if it doesn&rsquo;t resolve within the
+given  time. The interval is expresed in seconds.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">promise</span> <span class="o">=</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span> <span class="p">{</span> <span class="n">future</span> <span class="k">in</span>
+    <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="nf">fulfill</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+    <span class="p">}</span><span class="o">.</span><span class="nf">timeout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">timeout</span><span class="p">(</span><span class="n">_</span> <span class="nv">timeout</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC7timeoutACyqd__GSdlFZ"></a>
+                    <a name="//apple_ref/swift/Method/timeout(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC7timeoutACyqd__GSdlFZ">timeout(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <h3 id='timeout' class='heading'>Timeout</h3>
+
+<p>Static implementation for timeout. The interval is expresed in seconds.</p>
+<pre class="highlight swift"><code><span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;.</span><span class="nf">timeout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span>
+   <span class="c1">// do something</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">timeout</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">timeout</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC5delayACyytGSdFZ"></a>
+                    <a name="//apple_ref/swift/Method/delay(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC5delayACyytGSdFZ">delay(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <h3 id='delay' class='heading'>Delay</h3>
+
+<p>Defer the execution of a Promise by a given time interval.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">promise</span> <span class="o">=</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;.</span><span class="nf">delay</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span>
+   <span class="c1">// do something</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">delay</span><span class="p">(</span><span class="n">_</span> <span class="nv">delay</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC4raceACyqd__GAA8Executer_p2on_SayAEGtlFZ"></a>
+                    <a name="//apple_ref/swift/Method/race(on:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC4raceACyqd__GAA8Executer_p2on_SayAEGtlFZ">race(on:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <h3 id='race' class='heading'>Race</h3>
+
+<p>This function race many asynchronous promises and return the value of the first to complete.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">promise1</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">promise2</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">promise3</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">promise4</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">promise</span> <span class="o">=</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span>
+   <span class="o">.</span><span class="nf">race</span><span class="p">([</span><span class="n">promise1</span><span class="p">,</span> <span class="n">promise2</span><span class="p">,</span> <span class="n">promise3</span><span class="p">,</span> <span class="n">promise4</span><span class="p">])</span>
+   <span class="o">.</span><span class="n">then</span> <span class="p">{</span> <span class="n">fastValue</span> <span class="k">in</span>
+       <span class="nf">print</span><span class="p">(</span><span class="n">fastValue</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">race</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">on</span> <span class="nv">context</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Executer.html">Executer</a></span> <span class="o">=</span> <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="p">,</span> <span class="n">_</span> <span class="nv">promises</span><span class="p">:</span> <span class="p">[</span><span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC6alwaysACyxGAA8Executer_p2on_yyctF"></a>
+                    <a name="//apple_ref/swift/Method/always(on:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC6alwaysACyxGAA8Executer_p2on_yyctF">always(on:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <h3 id='always' class='heading'>Always</h3>
+
+<p>This function allows you to specify a block which will be always executed both for fulfill and reject of the Promise.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">foobar</span> <span class="o">=</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span>
+    <span class="k">throw</span> <span class="kt">SimpleError</span><span class="p">()</span>
+<span class="p">}</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span>
+   <span class="nf">print</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span>
+<span class="p">}</span><span class="o">.</span><span class="k">catch</span> <span class="p">{</span>
+   <span class="c1">// Handle error</span>
+<span class="p">}</span><span class="o">.</span><span class="n">always</span> <span class="p">{</span>
+   <span class="c1">// This block is always called</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">always</span><span class="p">(</span><span class="n">on</span> <span class="nv">context</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Executer.html">Executer</a></span> <span class="o">=</span> <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="p">,</span>
+                   <span class="n">_</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC8validateACyxGSbxcF"></a>
+                    <a name="//apple_ref/swift/Method/validate(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC8validateACyxGSbxcF">validate(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <h3 id='validate' class='heading'>Validate</h3>
+
+<p>Validate is a function that takes a predicate, and rejects the promise chain if that predicate fails.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">promise</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">validate</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">==</span> <span class="mi">3</span> <span class="p">}</span>
+    <span class="o">.</span><span class="k">catch</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
+        <span class="c1">// This promise always fails</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">validate</span><span class="p">(</span><span class="n">_</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC5retryACyqd__GSi7attempt_Sd5delayAEyc8generatetlFZ"></a>
+                    <a name="//apple_ref/swift/Method/retry(attempt:delay:generate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC5retryACyqd__GSi7attempt_Sd5delayAEyc8generatetlFZ">retry(attempt:delay:generate:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <h3 id='retry' class='heading'>Retry</h3>
+
+<p>Retry operator allows you to execute source chained promise if it ends with a rejection.
+ If reached the attempts the promise still rejected chained promise is also rejected along with the same
+ source error.</p>
+<pre class="highlight swift"><code> <span class="k">let</span> <span class="nv">promise</span> <span class="o">=</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span>
+     <span class="o">.</span><span class="nf">retry</span><span class="p">(</span><span class="nv">attempt</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span> <span class="k">in</span>
+         <span class="k">guard</span> <span class="n">threshold</span> <span class="o">!=</span> <span class="mi">1</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">8</span><span class="p">)</span> <span class="p">}</span>
+         <span class="n">threshold</span> <span class="o">-=</span> <span class="mi">1</span>
+         <span class="k">return</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">SimpleError</span><span class="p">())</span>
+ <span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">retry</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">attempt</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span>
+                            <span class="nv">delay</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+                            <span class="nv">generate</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC5catchACyxGAA8Executer_p2on_ys5Error_pctF"></a>
+                    <a name="//apple_ref/swift/Method/catch(on:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC5catchACyxGAA8Executer_p2on_ys5Error_pctF">catch(on:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <h3 id='catch' class='heading'>Catch</h3>
+
+<p>This function allows you to handle Promise&rsquo;s errors. The operator itself implicitly returns another promise, that is rejected with the same error.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">foobar</span> <span class="o">=</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;</span> <span class="p">{</span> <span class="n">future</span> <span class="k">in</span>
+   <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="nf">reject</span><span class="p">(</span><span class="kt">SimpleError</span><span class="p">()))</span>
+<span class="p">}</span><span class="o">.</span><span class="nf">then</span><span class="p">({</span> <span class="n">value</span> <span class="k">in</span>
+   <span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="p">})</span><span class="o">.</span><span class="nf">catch</span><span class="p">({</span> <span class="n">error</span> <span class="k">in</span>
+   <span class="c1">// Handle simple error here</span>
+<span class="p">})</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="p">`</span><span class="nv">catch</span><span class="p">`(</span><span class="n">on</span> <span class="nv">queue</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Executer.html">Executer</a></span> <span class="o">=</span> <span class="kt">DispatchQueue</span><span class="o">.</span><span class="n">main</span><span class="p">,</span>
+                    <span class="n">_</span> <span class="nv">rejected</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8DeLorean7PromiseC3allACySayqd__GGSayACyqd__GGlFZ"></a>
+                    <a name="//apple_ref/swift/Method/all(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8DeLorean7PromiseC3allACySayqd__GGSayACyqd__GGlFZ">all(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <h3 id='all' class='heading'>All</h3>
+
+<p>This function create a Promise that resolved when the list of passed Promises resolves (promises are resolved in
+ parallel). Promise also reject as soon as a promise reject for any reason.</p>
+<pre class="highlight swift"><code> <span class="k">let</span> <span class="nv">promise1</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+ <span class="k">let</span> <span class="nv">promise2</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+ <span class="k">let</span> <span class="nv">promise3</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
+ <span class="k">let</span> <span class="nv">promise4</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
+
+ <span class="k">let</span> <span class="nv">promise</span> <span class="o">=</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span>
+     <span class="o">.</span><span class="nf">all</span><span class="p">([</span><span class="n">promise1</span><span class="p">,</span> <span class="n">promise2</span><span class="p">,</span> <span class="n">promise3</span><span class="p">,</span> <span class="n">promise4</span><span class="p">])</span>
+     <span class="o">.</span><span class="n">then</span> <span class="p">{</span> <span class="n">values</span> <span class="k">in</span>
+         <span class="k">for</span> <span class="n">number</span> <span class="k">in</span> <span class="n">values</span> <span class="p">{</span>
+             <span class="nf">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+         <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="n">all</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">promises</span><span class="p">:</span> <span class="p">[</span><span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">T</span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>© 2018 <a class="link" href="https://therapychat.com" target="_blank" rel="external">TherapyChat</a> under <a class="link" href="https://github.com/therapychat/DeLorean/blob/master/LICENSE" target="_blank" rel="external">open source license</a>.</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

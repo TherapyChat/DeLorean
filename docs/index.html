@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DeLorean  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+
+
+    <a title="DeLorean  Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          DeLorean Docs
+        </a>
+         (100% documented)
+      </p>
+    
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/therapychat/DeLorean">
+            <img class="header-icon" src="img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="dash-feed://https%3A%2F%2Ftherapychat%2Egithub%2Eio%2FDeLorean%2FDeLorean%2Exml">
+            <img class="header-icon" src="img/dash.png"/>
+            Install in Dash
+          </a>
+        </p>
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html">DeLorean Reference</a>
+      <img class="carat" src="img/carat.png" />
+      DeLorean  Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/Promise.html">Promise</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/Queue.html">Queue</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/Future.html">Future</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/DispatchQueue.html">DispatchQueue</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/Executer.html">Executer</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            
+            <p><img src="./img/logo.svg"></p>
+<h2 id='table-of-contents' class='heading'>Table of Contents</h2>
+
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#basics">Basics</a>
+
+<ul>
+<li><a href="#creating-promises">Creating promises</a></li>
+<li><a href="#then">Then</a></li>
+<li><a href="#catch">Catch</a></li>
+<li><a href="#progress">Progress</a></li>
+<li><a href="#cancel">Cancel</a></li>
+</ul></li>
+<li><a href="#extensions">Extensions</a> 
+
+<ul>
+<li><a href="#all">All</a></li>
+<li><a href="#always">Always</a></li>
+<li><a href="#race">Race</a></li>
+<li><a href="#recover">Recover</a></li>
+<li><a href="#retry">Retry</a></li>
+<li><a href="#timeout">Timeout</a></li>
+<li><a href="#validate">Validate</a></li>
+<li><a href="#zip">Zip</a></li>
+</ul></li>
+<li><a href="#installation">Installation</a>
+
+<ul>
+<li><a href="#cocoapods">CocoaPods</a></li>
+<li><a href="#carthage">Carthage</a></li>
+<li><a href="#swift-package-manager">Swift Package Manager</a></li>
+</ul></li>
+<li><a href="#author">Author</a></li>
+<li><a href="#contribution">Contribution</a></li>
+<li><a href="#license">License</a></li>
+<li><a href="#changelog">Changelog</a></li>
+</ul>
+<h2 id='overview' class='heading'>Overview</h2>
+
+<p>DeLorean is a lightweight framework which allows you to write better async code in Swift. We designed DeLorean to be simple to use and also very flexible. It&rsquo;s partially based on <a href="https://promisesaplus.com">JavaScript A+</a> specs. We have added some useful features like <code>progressable</code> and <code>cancellable</code> promises. This promises layer queues all async task on background to avoid block the main thread.</p>
+<h2 id='features' class='heading'>Features</h2>
+
+<ul>
+<li>Super friendly API</li>
+<li>Enum-based DSL to handle Promise state</li>
+<li>Promises can be dispatched on any thread or custom queue</li>
+<li>All promises are <code>Cancellable</code> and <code>progressable</code></li>
+<li>The framework has 100% test coverage</li>
+<li>No external dependencies</li>
+<li>Minimal implementation</li>
+<li>Support for <code>iOS/macOS/tvOS/watchOS</code></li>
+<li>Support for CocoaPods/Carthage/Swift Package Manager</li>
+</ul>
+<h2 id='getting-started' class='heading'>Getting Started</h2>
+
+<p>This is a tiny example to build and execute a promise with <code>DeLorean</code>.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">foobar</span> <span class="o">=</span> <span class="kt">Promise</span> <span class="p">{</span> <span class="n">future</span> <span class="k">in</span>
+    <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="nf">fulfill</span><span class="p">(</span><span class="s">"foobar"</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="n">foobar</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span> <span class="n">value</span> <span class="k">in</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id='basics' class='heading'>Basics</h2>
+<h3 id='creating-promises' class='heading'>Creating promises</h3>
+
+<p>You can create and Promise with enum DSL for <code>async</code> operations. </p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">foobar</span> <span class="o">=</span> <span class="kt">Promise</span> <span class="p">{</span> <span class="n">future</span> <span class="k">in</span> 
+    <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="nf">progress</span><span class="p">(</span><span class="s">"foo"</span><span class="p">))</span>
+    <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="nf">fulfill</span><span class="p">(</span><span class="s">"foobar"</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="n">foobar</span><span class="o">.</span><span class="n">progress</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span>
+<span class="p">}</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span> <span class="n">string</span> <span class="k">in</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Also, you can create and Promise with block API for <code>async</code> operations.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">foobar</span> <span class="o">=</span> <span class="kt">Promise</span> <span class="p">{</span> <span class="n">progress</span><span class="p">,</span> <span class="n">fulfill</span><span class="p">,</span> <span class="n">reject</span><span class="p">,</span> <span class="n">cancel</span> <span class="k">in</span> 
+    <span class="nf">progress</span><span class="p">(</span><span class="s">"foo"</span><span class="p">)</span>
+    <span class="nf">cancel</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="n">foobar</span><span class="o">.</span><span class="n">progress</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span>
+<span class="p">}</span><span class="o">.</span><span class="n">cancel</span> <span class="p">{</span> 
+    <span class="c1">// ¯\_(ツ)_/¯</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id='then' class='heading'>Then</h3>
+
+<p>You can simple chaining multiple asynchronous tasks.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">foobar</span> <span class="o">=</span> <span class="kt">Promise</span> <span class="p">{</span> <span class="n">future</span> <span class="k">in</span> 
+    <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="nf">fulfill</span><span class="p">(</span><span class="s">"foobar"</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="n">promise</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span> <span class="n">value</span> <span class="k">in</span> 
+    <span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Or you can transform data between chainable promises.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">foobar</span> <span class="o">=</span> <span class="kt">Promise</span> <span class="p">{</span> <span class="n">future</span> <span class="k">in</span> 
+    <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="nf">fulfill</span><span class="p">(</span><span class="s">"foobar"</span><span class="p">))</span>
+<span class="p">}</span><span class="o">.</span><span class="nf">then</span><span class="p">({</span> <span class="n">value</span> <span class="k">in</span> 
+    <span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="p">})</span><span class="o">.</span><span class="nf">then</span><span class="p">({</span> <span class="n">value</span> <span class="k">in</span> 
+    <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">count</span>
+<span class="p">})</span><span class="o">.</span><span class="nf">then</span><span class="p">({</span> <span class="n">value</span> <span class="k">in</span> 
+    <span class="k">return</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="p">})</span>
+</code></pre>
+<h3 id='catch' class='heading'>Catch</h3>
+
+<p>This function allows you to handle Promise&rsquo;s errors. The operator itself implicitly returns another promise, that is rejected with the same error.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">foobar</span> <span class="o">=</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;</span> <span class="p">{</span> <span class="n">future</span> <span class="k">in</span> 
+    <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="nf">reject</span><span class="p">(</span><span class="kt">SimpleError</span><span class="p">()))</span>
+<span class="p">}</span><span class="o">.</span><span class="nf">then</span><span class="p">({</span> <span class="n">value</span> <span class="k">in</span> 
+    <span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="p">})</span><span class="o">.</span><span class="nf">catch</span><span class="p">({</span> <span class="n">error</span> <span class="k">in</span> 
+    <span class="c1">// Handle simple error here</span>
+<span class="p">})</span>
+</code></pre>
+<h3 id='progress' class='heading'>Progress</h3>
+
+<p>If there is an asynchronous action that can <q>succeed</q> more than once, or delivers a series of values over time instead of just one, but you don&rsquo;t want to finish the promise you can use this function.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">foobar</span> <span class="o">=</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span> <span class="p">{</span> <span class="n">future</span> <span class="k">in</span> 
+    <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="nf">progress</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+    <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="nf">progress</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+    <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="nf">progress</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+    <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="nf">fulfill</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="p">}</span><span class="o">.</span><span class="nf">progress</span><span class="p">({</span> <span class="n">value</span> <span class="k">in</span> 
+    <span class="c1">// This block is called multiple times</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="p">})</span><span class="o">.</span><span class="nf">then</span><span class="p">({</span> <span class="n">value</span> <span class="k">in</span> 
+    <span class="c1">// This block is called once</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre>
+<h3 id='cancel' class='heading'>Cancel</h3>
+
+<p>This function will trigger a callback that the promise can use to cancel its work. Naturally, requesting cancellation of a promise that has already been resolved does nothing, even if the callbacks have not yet been invoked.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">foobar</span> <span class="o">=</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span> <span class="p">{</span> <span class="n">future</span> <span class="k">in</span> 
+    <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="nf">progress</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+    <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="n">cancel</span><span class="p">)</span>
+    <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="nf">fulfill</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="p">}</span><span class="o">.</span><span class="n">progress</span> <span class="p">{</span> 
+    <span class="nf">print</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span>
+<span class="p">}</span><span class="o">.</span><span class="n">cancel</span> <span class="p">{</span>
+    <span class="c1">// Handle cancellable work</span>
+<span class="p">}</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span> <span class="n">value</span> <span class="k">in</span> 
+    <span class="c1">// This block is never called</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+<h2 id='extensions' class='heading'>Extensions</h2>
+<h3 id='all' class='heading'>All</h3>
+
+<p>This function create a Promise that resolved when the list of passed Promises resolves (promises are resolved in parallel). Promise also reject as soon as a promise reject for any reason.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">promise1</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">promise2</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">promise3</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">promise4</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">promise</span> <span class="o">=</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span>
+    <span class="o">.</span><span class="nf">all</span><span class="p">([</span><span class="n">promise1</span><span class="p">,</span> <span class="n">promise2</span><span class="p">,</span> <span class="n">promise3</span><span class="p">,</span> <span class="n">promise4</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">then</span> <span class="p">{</span> <span class="n">values</span> <span class="k">in</span> 
+        <span class="k">for</span> <span class="n">number</span> <span class="k">in</span> <span class="n">values</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre>
+<h3 id='always' class='heading'>Always</h3>
+
+<p>This function allows you to specify a block which will be always executed both for fulfill and reject of the Promise.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">foobar</span> <span class="o">=</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span> 
+    <span class="k">throw</span> <span class="kt">SimpleError</span><span class="p">()</span>
+<span class="p">}</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span> 
+    <span class="nf">print</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span>
+<span class="p">}</span><span class="o">.</span><span class="k">catch</span> <span class="p">{</span>
+    <span class="c1">// Handle error</span>
+<span class="p">}</span><span class="o">.</span><span class="n">always</span> <span class="p">{</span>
+    <span class="c1">// This block is always called</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id='race' class='heading'>Race</h3>
+
+<p>This function race many asynchronous promises and return the value of the first to complete.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">promise1</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">promise2</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">promise3</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">promise4</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">promise</span> <span class="o">=</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span>
+    <span class="o">.</span><span class="nf">race</span><span class="p">([</span><span class="n">promise1</span><span class="p">,</span> <span class="n">promise2</span><span class="p">,</span> <span class="n">promise3</span><span class="p">,</span> <span class="n">promise4</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">then</span> <span class="p">{</span> <span class="n">fastValue</span> <span class="k">in</span> 
+        <span class="nf">print</span><span class="p">(</span><span class="n">fastValue</span><span class="p">)</span>
+    <span class="p">}</span>
+</code></pre>
+<h3 id='recover' class='heading'>Recover</h3>
+
+<p>Recover lets us catch an error and easily recover from it without breaking the rest of the promise chain.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">foobar</span> <span class="o">=</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span> <span class="p">{</span> <span class="n">_</span> <span class="k">in</span> 
+    <span class="k">throw</span> <span class="kt">SimpleError</span><span class="p">()</span>
+<span class="p">}</span><span class="o">.</span><span class="n">recover</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
+    <span class="k">return</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">}</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span>
+<span class="p">}</span><span class="o">.</span><span class="k">catch</span> <span class="p">{</span>
+    <span class="c1">// Handle error</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id='retry' class='heading'>Retry</h3>
+
+<p>Retry operator allows you to execute source chained promise if it ends with a rejection. If reached the attempts the promise still rejected chained promise is also rejected along with the same source error.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">promise</span> <span class="o">=</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span>
+    <span class="o">.</span><span class="nf">retry</span><span class="p">(</span><span class="nv">attempt</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span> <span class="k">in</span>
+        <span class="k">guard</span> <span class="n">threshold</span> <span class="o">!=</span> <span class="mi">1</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">8</span><span class="p">)</span> <span class="p">}</span>
+        <span class="n">threshold</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">SimpleError</span><span class="p">())</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id='timeout' class='heading'>Timeout</h3>
+
+<p>Timeout allows us to wait for a promise for a time interval or reject it, if it doesn&rsquo;t resolve within the given time. The interval is expresed in seconds. </p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">promise</span> <span class="o">=</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span> <span class="p">{</span> <span class="n">future</span> <span class="k">in</span>
+    <span class="nf">future</span><span class="p">(</span><span class="o">.</span><span class="nf">fulfill</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="p">}</span><span class="o">.</span><span class="nf">timeout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</code></pre>
+<h3 id='validate' class='heading'>Validate</h3>
+
+<p>Validate is a function that takes a predicate, and rejects the promise chain if that predicate fails.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">promise</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">validate</span> <span class="p">{</span> <span class="nv">$0</span> <span class="o">==</span> <span class="mi">3</span> <span class="p">}</span>
+    <span class="o">.</span><span class="k">catch</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span> 
+        <span class="c1">// This promise always fails </span>
+    <span class="p">}</span>
+</code></pre>
+<h3 id='zip' class='heading'>Zip</h3>
+
+<p>This function allows you to join different promises (2, 3 or 4) and return a tuple with the result of them. Promises are resolved in parallel.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">promise1</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">promise2</span> <span class="o">=</span> <span class="kt">Promise</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="s">"foobar"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">zipped</span> <span class="o">=</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;.</span><span class="nf">zip</span><span class="p">(</span><span class="n">promise1</span><span class="p">,</span> <span class="n">promise2</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">then</span> <span class="p">{</span> <span class="n">value1</span><span class="p">,</span> <span class="n">value2</span> <span class="k">in</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">value1</span><span class="p">)</span> <span class="c1">// This function prints `0` </span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">value2</span><span class="p">)</span> <span class="c1">// This function prints `"foobar"`</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>You can check the <code>DeLorean.playground</code> to experiment with more examples. If you need to see deeply information you can check our <a href="https://therapychat.github.io/DeLorean/">Documentation</a></p>
+<h2 id='installation' class='heading'>Installation</h2>
+<h3 id='cocoapods' class='heading'>CocoaPods</h3>
+
+<p>DeLorean is available through <a href="https://cocoapods.org">CocoaPods</a>. To install
+it, simply add the following line to your Podfile:</p>
+<pre class="highlight ruby"><code><span class="n">platform</span> <span class="ss">:ios</span><span class="p">,</span> <span class="s1">'10.0'</span>
+<span class="n">use_frameworks!</span>
+<span class="n">swift_version</span> <span class="o">=</span> <span class="s1">'4.0'</span>
+
+<span class="n">target</span> <span class="s1">'MyApp'</span> <span class="k">do</span>
+  <span class="n">pod</span> <span class="s1">'DeLorean'</span>
+<span class="k">end</span>
+</code></pre>
+<h3 id='carthage' class='heading'>Carthage</h3>
+
+<p>You can also install it via <a href="https://github.com/Carthage/Carthage">Carthage</a>. To do so, add the following to your Cartfile:</p>
+<pre class="highlight swift"><code><span class="n">github</span> <span class="err">'</span><span class="n">therapychat</span><span class="o">/</span><span class="kt">DeLorean</span><span class="err">'</span>
+</code></pre>
+<h3 id='swift-package-manager' class='heading'>Swift Package Manager</h3>
+
+<p>You can use <a href="https://swift.org/package-manager/">Swift Package Manager</a> and specify dependency in <code>Package.swift</code> by adding this:</p>
+<pre class="highlight swift"><code><span class="o">.</span><span class="kt">Package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/therapychat/DeLorean.git"</span><span class="p">,</span> <span class="nv">majorVersion</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre>
+<h2 id='author' class='heading'>Author</h2>
+
+<p>Sergio Fernández, <a href="mailto:fdz.sergio@gmail.com">fdz.sergio@gmail.com</a></p>
+<h2 id='contribution' class='heading'>Contribution</h2>
+
+<p>For the latest version, please check <a href="https://github.com/therapychat/DeLorean/tree/develop">develop</a> branch. Changes from this branch will be merged into the <a href="https://github.com/therapychat/DeLorean/tree/master">master</a> branch at some point.</p>
+
+<ul>
+<li>If you want to contribute, submit a <a href="https://github.com/therapychat/DeLorean/pulls">pull request</a> against a development <code>develop</code> branch.</li>
+<li>If you found a bug, <a href="https://github.com/therapychat/DeLorean/issues">open an issue</a>.</li>
+<li>If you have a feature request, <a href="https://github.com/therapychat/DeLorean/issues">open an issue</a>.</li>
+</ul>
+<h2 id='license' class='heading'>License</h2>
+
+<p>DeLorean is available under the <code>Apache License 2.0</code>. See the <a href="./LICENSE">LICENSE</a> file for more info.</p>
+<h2 id='changelog' class='heading'>Changelog</h2>
+
+<p>See <a href="./CHANGELOG">CHANGELOG</a> file.</p>
+
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>© 2018 <a class="link" href="https://therapychat.com" target="_blank" rel="external">TherapyChat</a> under <a class="link" href="https://github.com/therapychat/DeLorean/blob/master/LICENSE" target="_blank" rel="external">open source license</a>.</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

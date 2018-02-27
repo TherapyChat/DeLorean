@@ -1,0 +1,17 @@
+module: DeLorean
+author: Sergio Fernández
+author_url: https://therapychat.com
+github_url: https://github.com/therapychat/DeLorean
+dash_url: https://therapychat.github.io/DeLorean/DeLorean.xml
+
+theme: fullwidth
+clean: true
+
+readme: README.md
+
+disable_search: true
+skip_undocumented: false
+hide_documentation_coverage: false
+
+copyright: '© 2018 [TherapyChat](https://therapychat.com) under [open source license](https://github.com/therapychat/DeLorean/blob/master/LICENSE).'
+swift_version: '4.0.3'

@@ -1,0 +1,10 @@
+# .slather.yml
+
+coverage_service: cobertura_xml
+workspace: DeLorean.xcworkspace
+xcodeproj: DeLorean.xcodeproj
+scheme: DeLorean
+configuration: Test
+output_directory: coverage
+ignore:
+  - ../**/*/Xcode*
